@@ -21,11 +21,8 @@ app/frontend/yarn-error.log
 docker-compose.override.yml
 .docker
 .dockerignore
-docker-compose.yml
 
 # Ignore Docker-related files
-Dockerfile
-docker-compose.yml
 docker-compose.override.yml
 .docker
 .dockerignore
