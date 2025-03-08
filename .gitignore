@@ -30,3 +30,8 @@ docker-compose.override.yml
 .docker
 .dockerignore
 
+
+/nginx
+/node_modules
+/package-lock.json
+/package.json
