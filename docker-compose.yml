@@ -23,9 +23,8 @@ services:
     image: nginx:latest
     container_name: nginx
     volumes:
-      - .:/var/www/html
+      - ./app:/var/www/html   # Only mount the public directory for serving files
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
-      - /etc/letsencrypt/live:/etc/letsencrypt/live
     ports:
       - "80:80"
       - "443:443"
