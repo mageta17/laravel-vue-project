@@ -1,0 +1,32 @@
+# Laravel specific
+app/vendor
+app/.env
+app/.phpunit.result.cache
+
+# Node.js specific
+app/frontend/node_modules
+app/frontend/npm-debug.log
+app/frontend/yarn-error.log
+
+# VSCode specific
+.vscode/
+
+# Laravel Mix (Webpack) generated files
+/public/hot
+/public/storage
+/storage/*.key
+
+# Docker specific
+*.log
+docker-compose.override.yml
+.docker
+.dockerignore
+docker-compose.yml
+
+# Ignore Docker-related files
+Dockerfile
+docker-compose.yml
+docker-compose.override.yml
+.docker
+.dockerignore
+
