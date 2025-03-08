@@ -26,9 +26,6 @@ docker-compose.override.yml
 docker-compose.override.yml
 .docker
 .dockerignore
-docker-compose.yml
-Dockerfile
-
 
 /nginx
 /node_modules
