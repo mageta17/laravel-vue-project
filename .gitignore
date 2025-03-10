@@ -2,6 +2,7 @@
 app/vendor
 app/.env
 app/.phpunit.result.cache
+frontend
 
 # Node.js specific
 app/frontend/node_modules
