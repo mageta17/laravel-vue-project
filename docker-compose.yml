@@ -55,6 +55,21 @@ services:
     networks:
       - laravel_network
 
+# Networks# Node.js (Vue.js)
+  node:
+    image: node:22-alpine
+    container_name: node
+    working_dir: /var/www/html
+    volumes:
+      - ./app:/var/www/html
+    networks:
+      - laravel_network
+    command: sh -c "npm install && npx vite --host"
+    depends_on:
+      - app
+    ports:
+      - "5173:5173"
+
 networks:
   laravel_network:
     driver: bridge
