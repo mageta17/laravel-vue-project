@@ -23,7 +23,6 @@ services:
     volumes:
       - ./app/public:/var/www/html/public   # Only mount the public directory for serving files
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
-      - ./frontend/dist:/var/www/html/frontend/dist
     ports:
       - "80:80"
       - "443:443"
@@ -37,27 +36,24 @@ services:
     image: mysql:5.7
     container_name: mysql
     volumes:
-      - db_data:/var/lib/mysql
+      - ./mysql/data:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=laravel
     networks:
       - laravel_network
 
-  # Node.js (Vue.js)
-  node:
-    image: node:22-alpine
-    container_name: node
-    working_dir: /var/www/html
-    volumes:
-      - ./frontend:/var/www/html
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    depends_on:
+      - db
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: mysql
+      MYSQL_ROOT_PASSWORD: rootpassword
     networks:
       - laravel_network
-    command: sh -c "npm install && npm run serve"
-    depends_on:
-      - app
-    ports:
-      - "8080:8080"
 
 networks:
   laravel_network:

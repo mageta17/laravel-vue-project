@@ -3,6 +3,7 @@ app/vendor
 app/.env
 app/.phpunit.result.cache
 frontend
+mysql/data
 
 # Node.js specific
 app/frontend/node_modules
